@@ -74,26 +74,29 @@ public class MyCoursesFragment extends Fragment {
         loading.show();
 
         API apiService = APIClient.getClient().create(API.class);
-        Call<MyCoursesSuccess> call1 = apiService.get_subscribed_course_list("30");
+        Call<MyCoursesSuccess> call1 = apiService.get_subscribed_course_list("13");
         call1.enqueue(new Callback<MyCoursesSuccess>() {
 
             @Override
             public void onResponse(@NonNull Call<MyCoursesSuccess> call, @NonNull final retrofit2.Response<MyCoursesSuccess> response) {
                 loading.dismiss();
                 if (response.isSuccessful()) {
+                    Log.e("CourseResponse", response.body().toString());
                     Log.e(TAG + "Response Success : ", new GsonBuilder().setPrettyPrinting().create().toJson(response.body()));
-                            MyCoursesSuccess myCoursesSuccess =response.body();
-                            String strStatus = myCoursesSuccess.getStatus();
-                            if (strStatus.equalsIgnoreCase("success")){
-                                String strMessage = myCoursesSuccess.getMessage();
+                    MyCoursesSuccess myCoursesSuccess = response.body();
+                    String strStatus = myCoursesSuccess.getStatus();
+                    if (strStatus.equalsIgnoreCase("success")) {
+                        String strMessage = myCoursesSuccess.getMessage();
 
-                                List <MyCoursesSuccessData>myCoursesSuccessDataList=myCoursesSuccess.getData();
+                        List<MyCoursesSuccessData> myCoursesSuccessDataList = myCoursesSuccess.getData();
 
-                                CoursesHistoryAdapter coursesHistoryAdapter =new CoursesHistoryAdapter(myCoursesSuccessDataList,getContext());
-                                rvMyCourse.setAdapter(coursesHistoryAdapter );
+                        CoursesHistoryAdapter coursesHistoryAdapter = new CoursesHistoryAdapter(myCoursesSuccessDataList, getContext());
+                        rvMyCourse.setAdapter(coursesHistoryAdapter);
 
-                            }
-                  /*  CoursesHistoryAdapter popularCoursesAdapter = new CoursesHistoryAdapter(getActivity(), response.body().getData(), new OnRecyclerViewItemClickListner() {
+                    }
+
+
+                   /* CoursesHistoryAdapter popularCoursesAdapter = new CoursesHistoryAdapter(getActivity(), response.body().getData(), new OnRecyclerViewItemClickListner() {
                         @Override
                         public void onItemClick(int position) {
                             Intent i = new Intent(getActivity(), CourseDetailsActivity.class);
