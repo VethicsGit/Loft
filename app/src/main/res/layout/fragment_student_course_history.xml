@@ -1,0 +1,17 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fragment.StudentCourseHistoryFragment">
+
+    <ListView
+        android:id="@+id/lv_student_course_history"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:entries="@array/sample"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:dividerHeight="0.5dp"
+        android:divider="@color/colorDarkGray"/>
+
+</FrameLayout>

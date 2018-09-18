@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/faboptions_undo"
+        android:icon="@drawable/ic_undo"
+        android:title="Undo" />
+
+    <item
+        android:id="@+id/faboptions_redo"
+        android:icon="@drawable/ic_redo"
+        android:title="Redo" />
+
+    <item
+        android:id="@+id/faboptions_draw"
+        android:icon="@drawable/ic_draw"
+        android:title="Draw" />
+
+    <item
+        android:id="@+id/faboptions_colors"
+        android:icon="@drawable/ic_color_palette"
+        android:title="Colors" />
+
+    <item
+        android:id="@+id/faboptions_erase"
+        android:icon="@drawable/ic_erase"
+        android:title="Erase" />
+
+    <item
+        android:id="@+id/faboptions_send"
+        android:icon="@drawable/ic_app_share"
+        android:title="Send" />
+</menu>

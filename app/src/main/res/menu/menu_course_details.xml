@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.vethics.loft.CourseDetailsActivity">
+
+    <item
+        android:id="@+id/navigation_course_favourites"
+        android:icon="@drawable/ic_app_unfav"
+        android:title="@string/title_favourites"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_course_share"
+        android:icon="@drawable/ic_app_share"
+        android:title="@string/title_share"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_download_module"
+        android:title="@string/title_download_module"
+        app:showAsAction="never" />
+    
+   <!-- <item
+        android:id="@+id/action_download_entire_course"
+        android:title="@string/title_download_entire_course"
+        app:showAsAction="never" />-->
+</menu>

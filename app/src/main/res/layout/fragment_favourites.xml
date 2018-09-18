@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    tools:context="fragment.FavouritesFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_favourites"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/pb_load_more"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:overScrollMode="never" />
+
+    <ProgressBar
+        android:id="@+id/pb_load_more"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        tools:visibility="visible" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="#205CBC"
+        app:srcCompat="@drawable/ic_app_filter" />
+
+
+</RelativeLayout>

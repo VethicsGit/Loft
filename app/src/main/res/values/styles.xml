@@ -1,0 +1,98 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name = "AppTheme" parent = "Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name = "colorPrimary">@color/colorPrimary</item>
+        <item name = "colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name = "colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name = "DialogTheme" parent = "Theme.AppCompat.Light.Dialog">
+        <item name = "colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name = "AppTheme.NoActionBar">
+        <item name = "windowActionBar">false</item>
+        <item name = "windowNoTitle">true</item>bac
+        <item name = "windowActionBarOverlay">true</item>
+        <item name = "windowActionModeOverlay">true</item>
+    </style>
+
+    <style name = "WhiteEditText" parent = "Theme.AppCompat.Light">
+        <item name = "colorControlNormal">@color/colorTransparentWhite</item>
+        <item name = "colorControlActivated">@color/colorTransparentWhite</item>
+    </style>
+
+    <style name = "BlackEditText" parent = "Theme.AppCompat.Light">
+        <item name = "colorControlNormal">#9EBEFA</item>
+        <item name = "colorControlActivated">#9EBEFA</item>
+    </style>
+
+    <style name = "MyRatingBar" parent = "Theme.AppCompat.Light">
+        <item name = "colorControlNormal">@color/colorWhite</item>
+        <item name = "colorControlActivated">@color/starColor</item>
+    </style>
+
+    <style name = "MyErrorText" parent = "TextAppearance.AppCompat.Small">
+        <item name = "android:textColor">@color/colorError</item>
+        <item name = "android:textColorHint">@color/colorError</item>
+    </style>
+
+    <style name = "MyCheckbox" parent = "Theme.AppCompat.Light">
+        <item name = "colorControlNormal">@color/colorWhite</item>
+        <item name = "colorControlActivated">@color/colorWhite</item>
+    </style>
+
+    <style name = "MyErrorCheckbox" parent = "Theme.AppCompat.Light">
+        <item name = "colorControlNormal">@color/colorError</item>
+        <item name = "colorControlActivated">@color/colorWhite</item>
+    </style>
+
+    <style name = "MyHintText" parent = "TextAppearance.AppCompat.Small">
+        <item name = "android:textColor">@color/colorTransparentWhite</item>
+        <item name = "android:textColorHint">@color/colorTransparentWhite</item>
+    </style>
+
+    <style name = "MyHintText1" parent = "TextAppearance.AppCompat.Small">
+        <item name = "android:textColor">#9EBEFA</item>
+        <item name = "android:textSize">14sp</item>
+        <item name = "android:textColorHint">#9EBEFA</item>
+    </style>
+
+    <style name = "AppTheme.AppBarOverlay" parent = "ThemeOverlay.AppCompat.Dark.ActionBar" >
+
+
+    </style>
+
+    <style name = "AppTheme.PopupOverlay" parent = "ThemeOverlay.AppCompat.Light" />
+
+    <style name = "AppTheme.NoActionBar.AppBarOverlay" parent = "ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name = "AppTheme.NoActionBar.PopupOverlay" parent = "ThemeOverlay.AppCompat.Light" />
+
+    <!-- Dialog -->
+    <style name = "MyAlertDialogStyle" parent = "Theme.AppCompat.Light.Dialog.Alert">
+        <item name = "android:background">@color/colorWhite</item>
+        <item name = "buttonBarPositiveButtonStyle">@style/MyAlertDialogButtonStyle</item>
+        <item name = "buttonBarNegativeButtonStyle">@style/MyAlertDialogButtonStyle</item>
+        <item name = "buttonBarNeutralButtonStyle">@style/MyAlertDialogButtonStyle</item>
+    </style>
+
+    <style name = "MyAlertDialogButtonStyle" parent = "@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name = "android:textColor">@color/colorAccent</item>
+        <item name = "android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name = "MyDialogFadeAnimation">
+        <item name = "android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name = "android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name = "RatingBarSmall" parent = "android:Widget.DeviceDefault.Light.RatingBar.Indicator">
+        <item name = "android:progressDrawable">@drawable/ratingbar_review</item>
+        <item name = "android:minHeight">36dp</item>
+        <item name = "android:maxHeight">36dp</item>
+    </style>
+
+</resources>

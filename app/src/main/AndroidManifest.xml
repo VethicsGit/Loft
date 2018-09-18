@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vethics.loft">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@drawable/appicon_80"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/appicon_80"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:screenOrientation="portrait"
+            android:name="delete.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name="delete.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:parentActivityName=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".CourseDetailsActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:label="@string/title_activity_course_details"
+            android:parentActivityName=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".SplashScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".SigninActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SettingAboutus"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SettingTerms"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SettingPrivacy"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".SignupActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".EmailSigninActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".MyCoursesActivity"
+            android:label="@string/my_courses"
+            android:parentActivityName=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".StudentProfileActivity"
+            android:label="@string/student_profile_title"
+            android:parentActivityName=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".TermsConditionsActivity"
+            android:label="@string/title_activity_terms_conditions"
+            android:parentActivityName=".SignupActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.SignupActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".SupportActivity"
+            android:label="@string/title_activity_support"
+            android:parentActivityName=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".TutorInformationActivity"
+            android:label="@string/title_activity_tutor_information"
+            android:parentActivityName=".CourseDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.CourseDetailsActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ResetNewPasswordActivity"
+            android:label="@string/title_activity_change_password"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ChangePasswordActivity"
+            android:label="@string/title_activity_change_password"
+            android:parentActivityName=".StudentProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.StudentProfileActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".SearchCourseActivity"
+            android:label="@string/title_activity_search_course"
+            android:parentActivityName=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".DashBoardActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ViewDownloadedVideoActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:label="@string/title_activity_view_downloaded_video"
+            android:parentActivityName=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".CourseListingActivity"
+            android:label="@string/title_activity_course_listing"
+            android:parentActivityName=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".StripePaymentActivity"
+            android:label="@string/title_activity_stripe_payment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ConfirmEnrollActivity"
+            android:label="@string/title_activity_confirm_enroll"
+            android:parentActivityName=".CourseDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.CourseDetailsActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".WhiteBoardActivity"
+            android:label="@string/title_activity_white_board"
+            android:parentActivityName=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver
+            android:name="broadcastreceiver.broadcastProgressReceiver"
+            android:enabled="false"
+            android:exported="false" />
+
+        <service android:name="service.DownloaderService" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC2TP0noZdLmLWD98bicGAY1ww2Nmdlijo" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".LiveVideoInteractionActivity"
+            android:label="@string/title_activity_live_video_interaction"
+            android:parentActivityName=".DashBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vethics.loft.DashBoardActivity" />
+        </activity>
+        <activity android:name=".Course_description"
+            android:screenOrientation="portrait"></activity>
+    </application>
+
+</manifest>

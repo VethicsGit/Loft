@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="fragment.DownloadsVideoListFragment">
+
+    <ImageView
+        android:id="@+id/iv_back_download_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:padding="@dimen/_5sdp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_app_left_arrow" />
+
+    <LinearLayout
+        android:id="@+id/ll_download_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#609EBEFA"
+        android:padding="@dimen/_10sdp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/pb_download_video"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:indeterminate="false"
+                android:max="100"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                android:secondaryProgress="100" />
+
+            <TextView
+                android:id="@+id/tv_progress_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="12"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_download_video_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="text"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lv_downloads"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_empty_downloads"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Looks like you haven't downloaded any videos yet!"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

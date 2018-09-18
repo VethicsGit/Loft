@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_custom_tab_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_custom_tab_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/tv_custom_tab_count"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:background="@drawable/badge_background"
+        android:text="100"
+        android:textSize="12sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/view_bottom_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:scaleType="center"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_bottom_line"
+            tools:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/view_bottom_arrow"
+            android:layout_toStartOf="@+id/view_bottom_arrow"
+            android:background="#888888" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/view_bottom_arrow"
+            android:layout_toEndOf="@+id/view_bottom_arrow"
+            android:background="#888888" />
+    </RelativeLayout>
+
+
+</LinearLayout>

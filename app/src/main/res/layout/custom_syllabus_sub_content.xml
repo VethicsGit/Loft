@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width = "match_parent"
+    android:layout_height = "wrap_content">
+
+    <TextView
+        android:id = "@+id/tv_syllabus_sub_content_title"
+        android:layout_width = "0dp"
+        android:layout_height = "wrap_content"
+        android:layout_marginEnd = "8dp"
+        android:layout_marginStart = "8dp"
+        android:textSize = "16sp"
+        app:layout_constraintEnd_toStartOf = "@+id/tv_syllabus_sub_content_duration"
+        app:layout_constraintStart_toEndOf = "@+id/iv_syllabus_dot"
+        app:layout_constraintTop_toTopOf = "parent"
+        tools:text = "TextView" />
+
+    <TextView
+        android:id = "@+id/tv_syllabus_sub_content_duration"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginEnd = "8dp"
+        android:textSize = "14sp"
+        app:layout_constraintBottom_toBottomOf = "@+id/tv_syllabus_sub_content_title"
+        app:layout_constraintEnd_toEndOf = "parent"
+        app:layout_constraintTop_toTopOf = "@+id/tv_syllabus_sub_content_title"
+        tools:text = "TextView" />
+
+    <ImageView
+        android:id = "@+id/iv_syllabus_dot"
+        android:layout_width = "10dp"
+        android:layout_height = "10dp"
+        android:layout_marginStart = "8dp"
+        android:tint = "@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf = "@+id/tv_syllabus_sub_content_title"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintTop_toTopOf = "@+id/tv_syllabus_sub_content_title"
+        app:srcCompat = "@drawable/ic_radio_active" />
+
+    <View
+        android:id = "@+id/line_view_upper"
+        android:layout_width = "2dp"
+        android:layout_height = "0dp"
+        android:layout_marginBottom = "2dp"
+        android:background = "@color/colorAccent"
+        android:orientation = "vertical"
+        app:layout_constraintBottom_toTopOf = "@+id/iv_syllabus_dot"
+        app:layout_constraintEnd_toEndOf = "@+id/iv_syllabus_dot"
+        app:layout_constraintStart_toStartOf = "@+id/iv_syllabus_dot"
+        app:layout_constraintTop_toTopOf = "parent" />
+
+    <View
+        android:id = "@+id/line_view_lower"
+        android:layout_width = "2dp"
+        android:layout_height = "30dp"
+        android:layout_marginTop = "2dp"
+        android:background = "@color/colorAccent"
+        android:orientation = "vertical"
+        app:layout_constraintBottom_toBottomOf = "parent"
+        app:layout_constraintEnd_toEndOf = "@+id/iv_syllabus_dot"
+        app:layout_constraintStart_toStartOf = "@+id/iv_syllabus_dot"
+        app:layout_constraintTop_toBottomOf = "@+id/iv_syllabus_dot" />
+</android.support.constraint.ConstraintLayout>

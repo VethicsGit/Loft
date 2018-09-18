@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/dow_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_file_download_black_24dp"
+            />
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/dow_img"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download Course" />
+
+        <ToggleButton
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_more_horiz_black_24dp"
+            />
+        <TextView
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About the course"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_file_upload_black_24dp"
+            />
+        <TextView
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share this course"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_chat_bubble_outline_black_24dp"
+            />
+        <TextView
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/qanda"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_add_alert_black_24dp"
+            />
+        <TextView
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Announcements"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_format_list_bulleted_black_24dp"
+            />
+        <TextView
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Announcements"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Download Settings">
+        <ListPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/download_quality"
+            android:entries="@array/pref_download_quality_entries"
+            android:entryValues="@array/pref_download_quality_values"
+            android:key="key_download_quality"
+            android:summary="Specify video quality for download"
+            android:title="@string/download_quality" />
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="Download Feed"
+            android:entries="@array/pref_download_feed_entries"
+            android:entryValues="@array/pref_download_feed_values"
+            android:key="key_download_feed"
+            android:summary="Specify network to download videos"
+            android:title="Download Feed" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_header_about">
+
+        <Preference
+            android:selectable="false"
+            android:summary="@string/summary_about" />
+
+        <Preference
+            android:summary="@string/app_version"
+            android:title="@string/title_version" />
+
+        <Preference
+            android:key="@string/key_send_feedback"
+            android:summary="@string/summary_support"
+            android:title="@string/title_send_feedback">
+
+            <intent
+                android:targetClass="com.vethics.loft.SupportActivity"
+                android:targetPackage="com.vethics.loft">
+
+                <extra
+                    android:name="extra_name"
+                    android:value="0" />
+            </intent>
+        </Preference>
+
+
+        <!-- preference opens url in browser -->
+        <Preference
+            android:summary="@string/summary_faq"
+            android:title="@string/title_faq">
+            <intent
+                android:targetClass="com.vethics.loft.SupportActivity"
+                android:targetPackage="com.vethics.loft">
+
+                <extra
+                    android:name="extra_name"
+                    android:value="1" />
+            </intent>
+        </Preference>
+
+        <Preference android:title="@string/privacy_policy">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/url_privacy" />
+        </Preference>
+
+        <Preference android:title="@string/title_terms">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/url_terms" />
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

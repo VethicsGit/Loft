@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/closeDialogImg"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="end"
+            app:srcCompat="@drawable/ic_app_close"
+            android:tint="#00f" />
+
+        <Spinner
+            android:id="@+id/spnr_filter_categories"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/spinner_background"
+            android:entries="@array/language" />
+
+        <Spinner
+            android:id="@+id/spnr_filter_sub_categories"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/spinner_background"
+            android:entries="@array/sample" />
+
+        <Spinner
+            android:id="@+id/spnr_filter_level"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/spinner_background"
+            android:entries="@array/language" />
+
+        <Spinner
+            android:id="@+id/spnr_filter_language"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/spinner_background"
+            android:entries="@array/sample" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_filter_apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:text="Apply"
+        android:textColor="@color/colorWhite" />
+</RelativeLayout>
