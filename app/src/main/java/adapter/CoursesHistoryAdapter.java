@@ -101,6 +101,7 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
                 i.putExtra(courseid,"");
 
 
+
                /* startActivity(i);
                 getActivity().finish();
                 getActivity().overridePendingTransition(0, R.anim.slide_in_right);*/
