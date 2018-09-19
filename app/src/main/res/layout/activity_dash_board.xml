@@ -28,7 +28,9 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="@dimen/_20sdp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15sdp"
             android:textColor="@color/colorWhite" />
         </android.support.v7.widget.Toolbar>
 

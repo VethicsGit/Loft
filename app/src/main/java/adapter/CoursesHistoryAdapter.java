@@ -48,7 +48,7 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
     List<MyCoursesSuccessData>myCoursesSuccessData;
     private Context context;
     private String[] text = {"Mathematics", "Chemistry", "Physics", "Sciene", "English", "Gujarati", "Sanskrit", "Hindi", "Maths", "Chemistry", "Physics", "Sciene", "English", "Gujarati", "Sanskrit", "Hindi", "Maths", "Chemistry", "Physics", "Sciene", "English", "Gujarati", "Sanskrit", "Hindi"};
-        String courseid;
+
     private int[] image = {R.drawable.l4, R.drawable.l1, R.drawable.l2, R.drawable.l3, R.drawable.l4, R.drawable.l1, R.drawable.l2, R.drawable.l3, R.drawable.l4, R.drawable.l1, R.drawable.l2, R.drawable.l3, R.drawable.l4, R.drawable.l1, R.drawable.l2, R.drawable.l3, R.drawable.l4, R.drawable.l1, R.drawable.l2, R.drawable.l3, R.drawable.l4};
 
     int[] drawables = {R.drawable.ic_app_math, R.drawable.ic_app_bio, R.drawable.ic_app_filter, R.drawable.ic_app_search, R.drawable.ic_app_math, R.drawable.ic_app_bio, R.drawable.ic_app_filter, R.drawable.ic_app_search, R.drawable.ic_app_math, R.drawable.ic_app_bio, R.drawable.ic_app_filter, R.drawable.ic_app_search, R.drawable.ic_app_math, R.drawable.ic_app_bio, R.drawable.ic_app_filter, R.drawable.ic_app_search, R.drawable.ic_app_math, R.drawable.ic_app_bio, R.drawable.ic_app_filter, R.drawable.ic_app_search};
@@ -84,31 +84,31 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
 
 
 
-        SharedPreferences spLogin = context.getSharedPreferences(SessionManager.PREF_NAME, Context.MODE_PRIVATE);
-        spLogin.getString(courseid,"");
         MyCoursesSuccessData myCoursesSuccessData1 = myCoursesSuccessData.get(position);
         Glide.with(context).load(myCoursesSuccessData1.getCourseImage()).into(holder.ivCourseBackground);
         holder.tvPopularCourseTitle.setText(myCoursesSuccessData1.getCourseTitle());
         holder.rbCourseRatings.setRating(Float.parseFloat(myCoursesSuccessData1.getRating()));
         holder.tvCourseReviewsCount.setText(myCoursesSuccessData1.getTotalReviews());
+        holder.course_id.setText(myCoursesSuccessData1.getCategoryId());
 
 
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+
+        holder.ivAddFavourite.setOnClickListener(new View.  OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent i = new Intent(context, CourseDetailsActivity.class);
-                i.putExtra(courseid,"");
-
-
-
-               /* startActivity(i);
-                getActivity().finish();
-                getActivity().overridePendingTransition(0, R.anim.slide_in_right);*/
+            public void onClick(View v) {
+                if (!likedPositions.contains(holder.getAdapterPosition())) {
+                    likedPositions.add(holder.getAdapterPosition());
+                    updateHeartButton(holder, true);
+                } else {
+                    likedPositions.remove((Object) holder.getAdapterPosition());
+                    //holder.ivAddFavourite.setImageResource(R.drawable.ic_heart_outline_grey);
+                    updateHeartButton(holder, false);
+                }
+                Log.e(TAG, "Liked positions : " + likedPositions.toString());
             }
         });
-
-
+    }
 
        /* MyCoursesSuccessData myCoursesSuccessData1 = myCoursesSuccessData.get(position);
 
@@ -148,7 +148,7 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
             }
         });
     }*/
-    }
+
     @Override
     public int getItemCount() {
         return myCoursesSuccessData.size();
@@ -157,7 +157,7 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
     class MyViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
         ImageView ivCourseBackground, ivAddFavourite;
-        TextView tvPopularCourseCategoryTitle, tvPopularCourseTitle, tvSharePopularCourse, tvCourseRatings, tvCourseReviewsCount;
+        TextView tvPopularCourseCategoryTitle, tvPopularCourseTitle, tvSharePopularCourse, tvCourseRatings, tvCourseReviewsCount,course_id;
         RatingBar rbCourseRatings;
 
         MyViewHolder(View itemView) {
@@ -171,6 +171,20 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
             tvCourseReviewsCount = (TextView) itemView.findViewById(R.id.tv_popular_course_reviews_count);
             rbCourseRatings = (RatingBar) itemView.findViewById(R.id.rb_popular_course_rating);
             tvSharePopularCourse = (TextView) itemView.findViewById(R.id.tv_popular_share_popular_course);
+            course_id = (TextView) itemView.findViewById(R.id.course_id);
+
+
+
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(context, CourseDetailsActivity.class);
+                    i.putExtra("course_id",course_id.getText().toString());
+                    context.startActivity(i);
+
+                }
+            });
+
         }
     }
 

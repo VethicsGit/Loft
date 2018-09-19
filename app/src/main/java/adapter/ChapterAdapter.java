@@ -11,11 +11,17 @@ import android.widget.TextView;
 
 import com.vethics.loft.R;
 
+import java.util.ArrayList;
+
 public class ChapterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    private ArrayList datalist;
     private Context context;
 
 
-    public ChapterAdapter() {
+    public ChapterAdapter(ArrayList data,Context context) {
+        this.datalist=data;
+        this.context=context;
 
     }
 
@@ -23,6 +29,8 @@ public class ChapterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(context).inflate(R.layout.tab_1_fragment,parent,false);
+
+
 
 
         return new ViewHolder(view);
@@ -37,6 +45,7 @@ public class ChapterAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public int getItemCount() {
         return 0;
     }
+
 
 
     class ViewHolder  extends RecyclerView.ViewHolder {

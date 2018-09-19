@@ -1,39 +1,47 @@
 package adapter;
 
-import android.app.Fragment;
-import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v7.app.AppCompatActivity;
 
 import fragment.Tab1Fragment;
 import fragment.Tab2Fragment;
 
 public class ViewpageAdapter extends FragmentPagerAdapter {
 
+    CharSequence Title[];
+    int NumbOfTabs;
 
-    public ViewpageAdapter(FragmentManager fm) {
+   /* public ViewpageAdapter(FragmentManager fm) {
         super(fm);
+    }*/
+
+    public ViewpageAdapter(FragmentManager supportFragmentManager, CharSequence[] title, int numboftabs) {
+        super(supportFragmentManager);
+        this.Title = title;
+        this.NumbOfTabs = numboftabs    ;
     }
 
     @Override
-    public android.support.v4.app.Fragment getItem(int position) {
+    public Fragment getItem(int position) {
 
         if (position == 0)
         {
             Tab1Fragment tab1= new Tab1Fragment();
+            return tab1;
+
 
         }else
         {
-            Tab2Fragment tab2Fragment= new Tab2Fragment();
+            Tab2Fragment tab2= new Tab2Fragment();
+            return tab2;
         }
-        return null;
     }
 
     @Override
     public int getCount() {
         return 2;
     }
+
+
 }

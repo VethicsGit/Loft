@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -12,8 +14,7 @@ import android.widget.VideoView;
 
 import com.stepstone.apprating.listener.RatingDialogListener;
 
-import java.util.List;
-
+import adapter.ViewpageAdapter;
 import interfaces.OnRecyclerViewItemClickListner;
 import model.CourseDetail.CourseDetail;
 import model.CourseDetail.Data;
@@ -87,7 +88,7 @@ public class CourseDetailsActivity extends AppCompatActivity implements View.OnC
     }
 */
 
-    TextView  course_desc_title;
+   /* TextView  course_desc_title;
     TextView course_desc_stars;
     TextView course_desc_enrolled;
     TextView course_desc;
@@ -95,20 +96,44 @@ public class CourseDetailsActivity extends AppCompatActivity implements View.OnC
     TextView course_desc_chepter ;
     VideoView course_desc_video;
     String videofile  ="C:\\Users\\Kanika\\projects\\Loft\\app\\video";
+*/
 
+
+    String videofile  ="C:\\Users\\Kanika\\projects\\Loft\\app\\video";
+   VideoView video_vv;
+   TextView course_title,shorttitle;
+   TabLayout tablayout;
+   ViewPager v_pager;
+   ViewpageAdapter viewpageAdapter;
+   CharSequence Title[]={"Lectures","More"};
+   int Numboftabs = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_description);
+        setContentView(R.layout.course_descripton_buy);
 
 
-        course_desc_title=findViewById(R.id.course_desc_title);
+     /*   course_desc_title=findViewById(R.id.course_desc_title);
         course_desc_stars=findViewById(R.id.course_desc_stars);
         course_desc_enrolled=findViewById(R.id.course_desc_enrolled);
         course_desc=findViewById(R.id.course_desc);
         course_desc_doller=findViewById(R.id.course_desc_doller);
         course_desc_chepter=findViewById(R.id.course_desc_chepter);
         course_desc_video=findViewById(R.id.course_desc_video);
+*/
+     video_vv=findViewById(R.id.video_vv);
+     course_title =findViewById(R.id.course_title);
+     shorttitle=findViewById(R.id.title);
+
+     v_pager =findViewById(R.id.v_pager);
+
+
+
+     viewpageAdapter= new ViewpageAdapter(getSupportFragmentManager(),Title,Numboftabs);
+     v_pager.setAdapter(viewpageAdapter);
+
+     tablayout =findViewById(R.id.tablayout);
+     tablayout.setupWithViewPager(v_pager);
 
 
         Bitmap thumbnail = ThumbnailUtils.createVideoThumbnail(videofile,
@@ -131,15 +156,13 @@ public class CourseDetailsActivity extends AppCompatActivity implements View.OnC
 
                         Data courseDetails= courseDetail.getData();
                        String title =courseDetails.getCourseTitle();
-                       String Desc=courseDetails.getCourseDescription();
+                       String shortTitle=courseDetails.getCourseShortTitle();
                        String video=courseDetails.getCourseIntroductionVideo();
 
 
-                       course_desc_title.setText(title);
-                       course_desc.setText(Desc);
-                       course_desc_video.setVideoPath(video);
-
-
+                      course_title.setText(title);
+                       shorttitle.setText(shortTitle);
+                       video_vv.setVideoPath(video);
 
 
 

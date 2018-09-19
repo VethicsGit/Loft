@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.google.gson.GsonBuilder;
 
@@ -25,6 +26,8 @@ import utils.APIClient;
 import utils.SessionManager;
 
 public class CourseListingActivity extends AppCompatActivity {
+
+    TextView title;
     String strCategoryId, strSubCategory, strFilterLevel, strFilterLanguage, strCategory;
     private final String TAG = getClass().getCanonicalName();
 
@@ -41,6 +44,10 @@ public class CourseListingActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        title=findViewById(R.id.title);
+        title.setText("Course List");
 
         Intent i = getIntent();
         if (i.getExtras() != null) {

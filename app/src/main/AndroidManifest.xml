@@ -24,6 +24,7 @@
         <activity
             android:screenOrientation="portrait"
             android:name=".DashBoardActivity"
+            android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
@@ -182,7 +183,7 @@
         <activity
             android:screenOrientation="portrait"
             android:name=".CourseListingActivity"
-            android:label="@string/title_activity_course_listing"
+            android:label=""
             android:parentActivityName=".DashBoardActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -273,6 +274,7 @@
         </activity>
         <activity android:name=".Course_description"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".CourseDescriptionwithoutbuy"/>
     </application>
 
 </manifest>

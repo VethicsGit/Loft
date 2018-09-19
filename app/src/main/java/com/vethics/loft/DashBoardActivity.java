@@ -129,14 +129,11 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 homeFragment = new DashboardFragment();
                 adapter.addFragment(homeFragment);*/
 
-              Fragment fragment = new DashboardFragment();
-                android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.vp_dashboard_content,fragment);
-                Log.e("fragment","homefragment");
-                toolbar.setLayoutParams(params);
+                FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
+                title.setText("Dashboard");
+                ft.addToBackStack("Dashboard");
+                ft.replace(R.id.vp_dashboard_content,new DashboardFragment()).commit();
 
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
 
                 home_img.setImageDrawable(getResources().getDrawable(R.drawable.homepink));
                 blogs_img.setImageDrawable(getResources().getDrawable(R.drawable.favouritegray));
@@ -165,7 +162,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 fragmentTransaction.commit();*/
 
               FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
-//              ft.addToBackStack("Dashboars");
+//              ft.addToBackStack("Dashboard");
               ft.replace(R.id.vp_dashboard_content,new FavouritesFragment()).commit();
               title.setText("favorite");
               fabFilter.setVisibility(View.INVISIBLE);
@@ -204,9 +201,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
 //                ft.addToBackStack("Dashboard");
                 ft.replace(R.id.vp_dashboard_content,new MyCoursesFragment()).commit();
-
                 title.setText("My Course");
-                fabFilter.setVisibility(View.INVISIBLE);
+                fabFilter.setVisibility(View.GONE);
 
 
 

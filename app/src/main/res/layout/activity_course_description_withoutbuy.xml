@@ -6,9 +6,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical">
 
-<ScrollView
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<android.support.v4.widget.NestedScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
@@ -183,21 +187,20 @@
 
 
 </RelativeLayout>
-</ScrollView>
-
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+</android.support.v4.widget.NestedScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <Button
         android:layout_width="match_parent"
-        android:layout_height="13dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="#88288F"
+        android:layout_alignParentBottom="true"
         android:gravity="center"
         android:text="Buy Now"
         android:textColor="#FFFFFF" />
-</LinearLayout>
+    </RelativeLayout>
 
-
-
+    </FrameLayout>
 </LinearLayout>

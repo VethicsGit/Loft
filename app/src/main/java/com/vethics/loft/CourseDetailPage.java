@@ -12,23 +12,23 @@ import adapter.ViewpageAdapter;
 
 public class CourseDetailPage extends AppCompatActivity {
 
-    ViewPager viewPager;
+   /* ViewPager viewPager;
     ViewpageAdapter viewpageAdapter;
     TabLayout tabLayout ;
     RecyclerView rv_chepter;
-
+*/
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        setContentView(R.layout.course_detail_page);
+        setContentView(R.layout.activity_course_description_withoutbuy);
 
 
-        ViewPager viewPager=findViewById(R.id.v_pager);
-        ViewpageAdapter viewpageAdapter = new ViewpageAdapter(getSupportFragmentManager());
+     /*   ViewPager viewPager=findViewById(R.id.v_pager);
+        ViewpageAdapter viewpageAdapter = new ViewpageAdapter(getSupportFragmentManager(), Title, Numboftabs);
         viewPager.setAdapter(viewpageAdapter);
         TabLayout tabLayout=findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
-
+*/
 
 
     }

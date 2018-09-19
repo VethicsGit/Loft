@@ -108,6 +108,8 @@ public class FavouritesFragment extends Fragment {
             }
         });
 
+        fabFilter.setVisibility(View.INVISIBLE);
+
         handler = new Handler();
         if (getArguments() != null)
             strCategoryId = getArguments().getString("strCategoryId");

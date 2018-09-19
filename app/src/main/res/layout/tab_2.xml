@@ -19,6 +19,7 @@
             app:srcCompat="@drawable/ic_file_download_black_24dp"
             />
         <TextView
+            android:id="@+id/tv_dow_img"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/dow_img"
             android:layout_marginLeft="@dimen/_5sdp"
@@ -26,9 +27,12 @@
             android:layout_height="wrap_content"
             android:text="Download Course" />
 
-        <ToggleButton
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/toggle"
+            android:backgroundTint="#8A278F"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
+            android:theme="@style/AppTheme"
             android:layout_height="wrap_content" />
 
     </RelativeLayout>
@@ -39,11 +43,13 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/abt_course"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_more_horiz_black_24dp"
             />
         <TextView
+            android:id="@+id/tv_abt_course"
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,11 +63,13 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/share_course"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_file_upload_black_24dp"
             />
         <TextView
+            android:id="@+id/tv_share_course"
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,11 +83,13 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/q_a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_chat_bubble_outline_black_24dp"
             />
         <TextView
+            android:id="@+id/tv_q_a"
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,11 +103,13 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/announce"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_add_alert_black_24dp"
             />
         <TextView
+            android:id="@+id/tv_announce"
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -110,15 +122,17 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/resource"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_format_list_bulleted_black_24dp"
             />
         <TextView
+            android:id="@+id/tv_resource"
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Announcements"/>
+            android:text="Resource"/>
 
     </LinearLayout>
 

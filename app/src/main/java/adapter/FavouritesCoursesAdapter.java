@@ -5,11 +5,13 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -26,6 +28,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.GsonBuilder;
+import com.vethics.loft.CourseDescriptionwithoutbuy;
 import com.vethics.loft.R;
 
 import java.util.ArrayList;
@@ -113,14 +116,17 @@ public class FavouritesCoursesAdapter extends RecyclerView.Adapter<RecyclerView.
         ((MyViewHolder) holder).rbCourseRatings.setRating(datum.getRating());
 
         ((MyViewHolder) holder).tvCourseReviewsCount.setText("(" + datum.getTotalReviews() + ")");
+        ((MyViewHolder) holder).fav_id.setText(datum.getCourseId());
 
-        ((MyViewHolder) holder).llFavouriteItem.setOnClickListener(new View.OnClickListener() {
+
+
+        /*((MyViewHolder) holder).llFavouriteItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listner.onItemClick(position);
+                 listner.onItemClick(position);
             }
         });
-
+*/
     }
         /*if (holder instanceof MyViewHolder) {
             final int adapterPosition = holder.getAdapterPosition();
@@ -202,9 +208,10 @@ public class FavouritesCoursesAdapter extends RecyclerView.Adapter<RecyclerView.
 
         class MyViewHolder extends RecyclerView.ViewHolder {
             ImageView ivCourseBackground, ivAddFavourite;
-            TextView tvPopularCourseCategoryTitle, tvPopularCourseTitle, tvSharePopularCourse, tvCourseRatings, tvCourseReviewsCount;
+            TextView tvPopularCourseCategoryTitle, tvPopularCourseTitle, tvSharePopularCourse, tvCourseRatings, tvCourseReviewsCount,fav_id;
             RatingBar rbCourseRatings;
             LinearLayout llFavouriteItem;
+            CardView fav_card;
 
             MyViewHolder(View itemView) {
                 super(itemView);
@@ -217,6 +224,20 @@ public class FavouritesCoursesAdapter extends RecyclerView.Adapter<RecyclerView.
                 rbCourseRatings = (RatingBar) itemView.findViewById(R.id.rb_favourites_course_rating);
                 tvSharePopularCourse = (TextView) itemView.findViewById(R.id.tv_favourites_share_favourites_course);
                 llFavouriteItem = (LinearLayout) itemView.findViewById(R.id.ll_favourite_item);
+                fav_card=itemView.findViewById(R.id.fav_card);
+                fav_id=itemView.findViewById(R.id.fav_id);
+
+
+                fav_card.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent intent=new Intent(context, CourseDescriptionwithoutbuy.class);
+                        intent.putExtra("course_id",fav_id.getText().toString());
+                        context.startActivity(intent);
+
+                    }
+                });
             }
         }
 
