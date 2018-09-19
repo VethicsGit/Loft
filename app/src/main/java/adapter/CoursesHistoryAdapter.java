@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
@@ -21,6 +23,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.vethics.loft.CourseDetailsActivity;
 import com.vethics.loft.GlideApp;
 import com.vethics.loft.R;
 
@@ -32,6 +35,7 @@ import java.util.Map;
 import interfaces.OnRecyclerViewItemClickListner;
 import model.MyCourses.MyCoursesSuccess;
 import model.MyCourses.MyCoursesSuccessData;
+import utils.SessionManager;
 
 /**
  * Created by Chirag on 1/10/2018.
@@ -44,7 +48,7 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
     List<MyCoursesSuccessData>myCoursesSuccessData;
     private Context context;
     private String[] text = {"Mathematics", "Chemistry", "Physics", "Sciene", "English", "Gujarati", "Sanskrit", "Hindi", "Maths", "Chemistry", "Physics", "Sciene", "English", "Gujarati", "Sanskrit", "Hindi", "Maths", "Chemistry", "Physics", "Sciene", "English", "Gujarati", "Sanskrit", "Hindi"};
-
+        String courseid;
     private int[] image = {R.drawable.l4, R.drawable.l1, R.drawable.l2, R.drawable.l3, R.drawable.l4, R.drawable.l1, R.drawable.l2, R.drawable.l3, R.drawable.l4, R.drawable.l1, R.drawable.l2, R.drawable.l3, R.drawable.l4, R.drawable.l1, R.drawable.l2, R.drawable.l3, R.drawable.l4, R.drawable.l1, R.drawable.l2, R.drawable.l3, R.drawable.l4};
 
     int[] drawables = {R.drawable.ic_app_math, R.drawable.ic_app_bio, R.drawable.ic_app_filter, R.drawable.ic_app_search, R.drawable.ic_app_math, R.drawable.ic_app_bio, R.drawable.ic_app_filter, R.drawable.ic_app_search, R.drawable.ic_app_math, R.drawable.ic_app_bio, R.drawable.ic_app_filter, R.drawable.ic_app_search, R.drawable.ic_app_math, R.drawable.ic_app_bio, R.drawable.ic_app_filter, R.drawable.ic_app_search, R.drawable.ic_app_math, R.drawable.ic_app_bio, R.drawable.ic_app_filter, R.drawable.ic_app_search};
@@ -56,7 +60,6 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
 
 //    private final OnRecyclerViewItemClickListner listener;
     private final String TAG = getClass().getCanonicalName();
-    private List<MyCoursesSuccessData> courseEnrollSuccessArrayList;
 
    /* public CoursesHistoryAdapter(Context context, List<MyCoursesSuccessData> courseEnrollSuccessArrayList, OnRecyclerViewItemClickListner listener) {
         this.context = context;
@@ -79,7 +82,35 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
+
+
+        SharedPreferences spLogin = context.getSharedPreferences(SessionManager.PREF_NAME, Context.MODE_PRIVATE);
+        spLogin.getString(courseid,"");
         MyCoursesSuccessData myCoursesSuccessData1 = myCoursesSuccessData.get(position);
+        Glide.with(context).load(myCoursesSuccessData1.getCourseImage()).into(holder.ivCourseBackground);
+        holder.tvPopularCourseTitle.setText(myCoursesSuccessData1.getCourseTitle());
+        holder.rbCourseRatings.setRating(Float.parseFloat(myCoursesSuccessData1.getRating()));
+        holder.tvCourseReviewsCount.setText(myCoursesSuccessData1.getTotalReviews());
+
+
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, CourseDetailsActivity.class);
+                i.putExtra(courseid,"");
+
+
+
+               /* startActivity(i);
+                getActivity().finish();
+                getActivity().overridePendingTransition(0, R.anim.slide_in_right);*/
+            }
+        });
+
+
+
+       /* MyCoursesSuccessData myCoursesSuccessData1 = myCoursesSuccessData.get(position);
 
 //        GlideApp.with(context).load(courseEnrollSuccessArrayList.get(position).getCourseImage()).error(R.mipmap.ic_launcher).placeholder(R.mipmap.poweredby_vethics).into(holder.ivCourseBackground);
         Glide.with(context).load(myCoursesSuccessData1.getCourseImage()).into(holder.ivCourseBackground);
@@ -96,12 +127,12 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
         holder.tvCourseRatings.setText((Double.toString(Double.parseDouble(myCoursesSuccessData1.getRating()))));
         updateHeartButton(holder, false);
 
-      /*  holder.cardView.setOnClickListener(new View.OnClickListener() {
+      *//*  holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onItemClick(position);
             }
-        });*/
+        });*//*
         holder.ivAddFavourite.setOnClickListener(new View.  OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,11 +147,11 @@ public class CoursesHistoryAdapter extends RecyclerView.Adapter<CoursesHistoryAd
                 Log.e(TAG, "Liked positions : " + likedPositions.toString());
             }
         });
+    }*/
     }
-
     @Override
     public int getItemCount() {
-        return courseEnrollSuccessArrayList.size();
+        return myCoursesSuccessData.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {

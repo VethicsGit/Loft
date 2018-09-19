@@ -151,9 +151,9 @@ public interface API {
                                               @Field("course_id") String course_id,
                                               @Field("rating") int rating,
                                               @Field("review") String review);
-
-    @GET("api/course/studentSubscribedToCourse/{student_id}")
-    Call<MyCoursesSuccess> get_subscribed_course_list(@Path("student_id") String student_id);
+    @FormUrlEncoded
+    @POST("api/course/student_Subscribed_To_Course")
+    Call<MyCoursesSuccess> get_subscribed_course_list(@Field("student_id") String student_id);
 
 
 
